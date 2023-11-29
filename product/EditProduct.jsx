@@ -73,12 +73,14 @@ export default function EditProduct ({match}) {
       read({
         productId: match.params.productId
       }, signal).then((data) => {
-        if (data.error) {
-          setValues({...values, error: data.error})
-        } else {
+        console.log('editproduct data')
+        console.log(data)
+        // if (data.error) {
+        //   setValues({...values, error: data.error})
+        // } else {
           setValues({...values, id: data._id, name: data.name, description: data.description, category: data.category, quantity:data.quantity, price: data.price})
         }
-      })
+      ).catch((error)=>setValues({...values, error: data.error}))
     return function cleanup(){
       abortController.abort()
     }

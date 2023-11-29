@@ -56,12 +56,12 @@ export default function MyProducts (props){
     listByShop({
       shopId: props.shopId
     }, signal).then((data)=>{
-      if (data.error) {
-        console.log(data.error)
-      } else {
+      // if (data.error) {
+      //   console.log(data.error)
+      // } else {
         setProducts(data)
-      }
-    })
+      }).catch((error)=>{console.log(error)})
+    
     return function cleanup(){
       abortController.abort()
     }

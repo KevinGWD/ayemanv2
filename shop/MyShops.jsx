@@ -50,12 +50,12 @@ export default function MyShops(){
     listByOwner({
       userId: jwt.user._id
     }, {t: jwt.token}, signal).then((data) => {
-      if (data.error) {
-        setRedirectToSignin(true)
-      } else {
+      // if (data.error) {
+      //   setRedirectToSignin(true)
+      // } else {
         setShops(data)
-      }
-    })
+      }).catch((error)=>{return(error)})
+    
     return function cleanup(){
       abortController.abort()
     }

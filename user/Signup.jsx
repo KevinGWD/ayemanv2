@@ -62,12 +62,12 @@ export default function Signup() {
       password: values.password || undefined
     }
     create(user).then((data) => {
-      if (data.error) {
-        setValues({ ...values, error: data.error})
-      } else {
+      // if (data.error) {
+      //   setValues({ ...values, error: data.error})
+      // } else {
         setValues({ ...values, error: '', open: true})
       }
-    })
+    ).catch((error)=>{console.log(error)})
   }   
     return (<div>
       <Card className={classes.card}>

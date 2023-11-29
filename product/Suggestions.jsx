@@ -43,8 +43,11 @@ const useStyles = makeStyles(theme => ({
   },
   cover: {
     width: '65%',
-    height: 130,
-    margin: '8px'
+    margin: '8px',
+      height: 100,  //130
+      // paddingTop: '56.25%', // 16:9,
+      // marginTop:'30'
+    
   },
   controls: {
     marginTop: '8px'
