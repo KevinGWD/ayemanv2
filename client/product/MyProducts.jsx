@@ -92,7 +92,7 @@ export default function MyProducts (props){
               <ListItem>
                 <CardMedia
                   className={classes.cover}
-                  image={'/api/product/image/'+product._id+"?" + new Date().getTime()}
+                  image={'/api/product/image/'+product._id+"?" }
                   title={product.name}
                 />
                 <div className={classes.details}>

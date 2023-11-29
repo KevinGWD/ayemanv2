@@ -64,6 +64,7 @@ const productByID = async (req, res, next, id) => {
 const photo = (req, res, next) => {
   if(req.product.image.data){
     res.set("Content-Type", req.product.image.contentType)
+    console.log('IMAGE')
     return res.send(req.product.image.data)
   }
   next()
@@ -98,7 +99,9 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
   try {
 
-    const product = await Product.findOneAndDelete({_id: req.params.id});
+    const product = await Product.findOneAndDelete({_id: req.params.productId});
+    console.log('deleting........')
+    console.log(req.params)
     if(product)
     {
       res.json({ message: 'Product removed' });

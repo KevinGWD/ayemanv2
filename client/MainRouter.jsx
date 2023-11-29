@@ -20,7 +20,7 @@ import Cart from './cart/Cart'
 import StripeConnect from './user/StripeConnect'
 import ShopOrders from './order/ShopOrders'
 import Order from './order/Order'
-import Products from './product/Products'
+import Suggestions from './product/Suggestions'
 import About from './src/About'
 
 const MainRouter = () => {
@@ -36,7 +36,7 @@ const MainRouter = () => {
 
         <Route path="/cart" component={Cart}/>
         <Route path="/product/:productId" component={Product}/>
-        <Route path="/products/all" component={Products}/>
+        <Route path="/products/all" component={Suggestions}/>
         <Route path="/shops/:shopId" component={Shop}/>
 
         <Route path="/aboutUs" component={About}/>
